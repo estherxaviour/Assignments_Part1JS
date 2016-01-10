@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+var validateEmail = (function(email_id){
+var expr = /^[a-zA-Z_\.\-]+@[a-zA-Z_\-\.]+?\.[a-zA-Z]{2,4}$/;
+return expr.test(email_id);
+function validateForm() {
+    var x = document.forms["Form1"]["name"].value;
+    var y = document.forms["Form1"]["phone"].value;
+    var z = document.forms["Form1"]["email"].value;
+    if (x == null || x == "") {
+        alert("Name must be filled out");
+        return false;
+    }
+ if (y == null || y == "") {
+        alert("Phone must be filled out");
+        return false;
+    }
+if (z == null || z == "") {
+        alert("Email must be filled out");
+        return false;
+    }
+}
+validateForm();
+ })('esther@gmail.com');
+ // document.write(validateEmail);
+
+
+/*var validateEmail = (function(email_id)
+     var expr = /^[a-zA-Z_\.\-]+@[a-zA-Z_\-\.]+?\.[a-zA-Z]{2,4}$/;
+         return expr.test(email_id);
+           })('esther@gmail.com');
+          document.write(validateEmail); 
+		  
+		  function init() {
+  var name = "Mozilla"; // name is a local variable created by init
+  function displayName() { // displayName() is the inner function, a closure
+    alert(name); // use variable declared in the parent function    
+  }
+  displayName();    
+}
+init();
+		  
+		  
+		  
+		  
+		  
+*/
+</script>
+</head>
+<body>
+
+<form name="Form1" action=""
+onsubmit="return validateEmail()" method="post">
+Name: <input type="text" name="name"><br>
+Phone: <input type="text" name="phone"> <br>
+Email: <input type="text" name="email">
+<input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
